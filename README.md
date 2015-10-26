@@ -21,7 +21,7 @@ Concept
 
 Contrôles
 =========
-* Déplacer le vaisseau avec ZQSD
+* Déplacer le vaisseau avec ZQSD (paramétrable dans config.js, changer les paramètres dans l'object fps.options.current)
 * Déplacer le viseur avec la souris
 * Deux modes de tir :
     * Bullet simple : clic gauche
