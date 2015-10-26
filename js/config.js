@@ -26,6 +26,9 @@ fps.options = {
             large: 2,
             heavy: 2.5
         }
+    },
+    current: {
+        // Custom parameters
     }
 };
 
