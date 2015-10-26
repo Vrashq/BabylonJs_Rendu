@@ -1,0 +1,11 @@
+@import 'AirStrike/stylesheet.css';
+@import 'base';
+@import 'gui';
+
+#debug {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}

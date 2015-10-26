@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Steredenn
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/347160
+Icon=steam_icon_347160
+Terminal=false
+Type=Application
+Categories=Game;

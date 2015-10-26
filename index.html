@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Babylon FPS</title>
+    <script type="text/javascript" src="lib/babylon.2.2.js"></script>
+    <script type="text/javascript" src="lib/babylon.objFileLoader.js"></script>
+    <script type="text/javascript" src="lib/Oimo.js"></script>
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="gameCanvas"></canvas>
+<div id="hud">
+    <div id="topLeft">
+        <div id="playerHealth">
+            <div class="backBar"></div>
+            <div class="bar">
+                <div class="text">Health</div>
+            </div>
+        </div>
+    </div>
+    <div id="topRight">
+        <div id="playerMissileCooldown">
+            <div class="cd"></div>
+            <div class="desc">right<br/>click</div>
+        </div>
+    </div>
+    <div id="top">
+        <div id="score">
+            Score: <span class="value">0</span>
+        </div>
+    </div>
+</div>
+<div id="debug"><button class="debug">Debug</button></div>
+
+<!--<script type="text/javascript" src="js/OldGame.js"></script>-->
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/shaders.js"></script>
+<script type="text/javascript" src="js/inputs.js"></script>
+<script type="text/javascript" src="js/outils.js"></script>
+<script type="text/javascript" src="js/class/Game.js"></script>
+<script type="text/javascript" src="js/class/SkyBox.js"></script>
+<script type="text/javascript" src="js/class/Player.js"></script>
+<script type="text/javascript" src="js/class/BonusRing.js"></script>
+<script type="text/javascript" src="js/class/Bullet.js"></script>
+<script type="text/javascript" src="js/class/Missile.js"></script>
+<script type="text/javascript" src="js/class/Explosion.js"></script>
+<script type="text/javascript" src="js/class/RingShield.js"></script>
+<script type="text/javascript">
+    fps.options.current = {
+        playerSpeed: 4,
+        canvasID: "gameCanvas"
+    };
+
+    window.addEventListener("load", function() {
+        var debug = false;
+        $('#debug').on('click', ".debug", function(event) {
+            if(debug)
+                fps.Game.getInstance().scene.debugLayer.hide();
+            else
+                fps.Game.getInstance().scene.debugLayer.show();
+            debug = !debug;
+        });
+
+        fps.Game.getInstance().startGame();
+    });
+
+    function randomXYVector3(lastPosition, maxX, maxY) {
+        var vector = lastPosition.clone();
+        vector.x += (Math.random() - 0.5) * maxX;
+        vector.y += (Math.random() - 0.5) * maxY;
+        return vector;
+    }
+
+    function randomNumber(min, max) {
+        return (max - min) * Math.random() + min;
+    }
+</script>
+</body>
+</html>
